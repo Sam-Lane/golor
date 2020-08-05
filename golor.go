@@ -25,11 +25,12 @@ const (
 	rgb = "\033[38;2;%d;%d;%dm%s\033[39;49m\n"
 )
 
+// wrap a string with a color code and reset code
 func colorWrap(color string, message string) string {
 	return color + message + reset
 }
 
-// RGB return a RGB colored sring
+// RGB return a RGB colored string
 func RGB(red int, green int, blue int, message string) string {
 	return fmt.Sprintf(rgb, red, green, blue, message)
 }
@@ -39,7 +40,7 @@ func Red(message string) string {
 	return colorWrap(red, message)
 }
 
-// Black return red colored string
+// Black return black colored string
 func Black(message string) string {
 	return colorWrap(black, message)
 }
